@@ -209,17 +209,12 @@ const Admin = () => {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="border-b border-border/50 backdrop-blur-sm sticky top-0 z-50 glass">
-        <div className="container mx-auto px-4 py-4">
+      <header className="border-b border-border bg-white sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full gradient-wellness flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Admin Panel
-              </h1>
-            </div>
+            <h1 className="text-xl font-normal text-foreground">
+              Admin Panel - wholesomewellnessway.com
+            </h1>
             <Button variant="outline" onClick={() => window.location.href = "/"}>
               Back to Home
             </Button>
@@ -229,7 +224,7 @@ const Admin = () => {
 
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         <Tabs defaultValue="ads" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 glass mb-8">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="ads">Manage Ads</TabsTrigger>
             <TabsTrigger value="results">Manage Web Results</TabsTrigger>
           </TabsList>
@@ -237,7 +232,7 @@ const Admin = () => {
           {/* Ads Management */}
           <TabsContent value="ads" className="space-y-6">
             {/* Add New Ad Form */}
-            <Card className="glass border-border/50">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Plus className="w-5 h-5" />
@@ -290,7 +285,7 @@ const Admin = () => {
                   />
                   <Label htmlFor="new-ad-featured">Featured (show on home page)</Label>
                 </div>
-                <Button onClick={handleAddAd} className="w-full gradient-wellness text-white">
+                <Button onClick={handleAddAd} className="w-full bg-primary hover:bg-primary/90 text-white">
                   <Plus className="w-4 h-4 mr-2" />
                   Add Ad
                 </Button>
@@ -301,7 +296,7 @@ const Admin = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Existing Ads</h3>
               {ads.map((ad) => (
-                <Card key={ad.id} className="glass border-border/50">
+                <Card key={ad.id} className="border-border">
                   <CardContent className="pt-6">
                     {editingAd?.id === ad.id ? (
                       <div className="space-y-4">
@@ -341,7 +336,7 @@ const Admin = () => {
                           <Label>Featured</Label>
                         </div>
                         <div className="flex gap-2">
-                          <Button onClick={handleUpdateAd} className="gradient-wellness text-white">
+                          <Button onClick={handleUpdateAd} className="bg-primary hover:bg-primary/90 text-white">
                             Save
                           </Button>
                           <Button variant="outline" onClick={() => setEditingAd(null)}>
@@ -392,7 +387,7 @@ const Admin = () => {
           {/* Web Results Management */}
           <TabsContent value="results" className="space-y-6">
             {/* Add New Result Form */}
-            <Card className="glass border-border/50">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Plus className="w-5 h-5" />
@@ -442,7 +437,7 @@ const Admin = () => {
                     placeholder="0"
                   />
                 </div>
-                <Button onClick={handleAddResult} className="w-full gradient-wellness text-white">
+                <Button onClick={handleAddResult} className="w-full bg-primary hover:bg-primary/90 text-white">
                   <Plus className="w-4 h-4 mr-2" />
                   Add Web Result
                 </Button>
@@ -453,7 +448,7 @@ const Admin = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Existing Web Results</h3>
               {webResults.map((result) => (
-                <Card key={result.id} className="glass border-border/50">
+                <Card key={result.id} className="border-border">
                   <CardContent className="pt-6">
                     {editingResult?.id === result.id ? (
                       <div className="space-y-4">
@@ -488,7 +483,7 @@ const Admin = () => {
                           placeholder="Display Order"
                         />
                         <div className="flex gap-2">
-                          <Button onClick={handleUpdateResult} className="gradient-wellness text-white">
+                          <Button onClick={handleUpdateResult} className="bg-primary hover:bg-primary/90 text-white">
                             Save
                           </Button>
                           <Button variant="outline" onClick={() => setEditingResult(null)}>
